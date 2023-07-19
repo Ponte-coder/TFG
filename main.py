@@ -1,16 +1,14 @@
-# This is a sample Python script.
+from ShanghaiMap import ShanghaiMap
 
-# Press Mayús+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+if __name__ == "__main__":
+    # Create an instance of ShanghaiMap
+    shanghai_map = ShanghaiMap()
 
+    # Folder path containing the XLSX files
+    folder_path = "dataset"
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+    # Load data from the XLSX files using parallel processing
+    shanghai_map.load_data_from_excel(folder_path)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # Plot the base stations on a map
+    shanghai_map.plot_base_stations()
